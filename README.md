@@ -15,10 +15,19 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
     <li>Grade C - Not Ripe</li>
   </ol>
 <!-- insert screenshot -->
-<p>
-  The **__precision, recall and average precision (AP)__** for this chili grading model is:<br/>
-</p>
 
+<p>
+  The <b><u>precision, recall and average precision (AP)</u></b> for this chili grading model is:
+</p>
+<br />
+  
+  Chili Grading Model |
+  --- |
+  `Precision: 74.7%` |
+  `Recall: 51.2%` |
+  `Average Precision (AP): 71.1%` |
+
+<br />
 ## AI Project #2 - Pneumonia Detection
 <p>
   Chest X-ray image data set is taken from Kaggle.<br />
@@ -30,10 +39,21 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
 </ol>
 <!-- insert screenshot -->
 
+<p>
+  The <b><u>precision, recall and average precision (AP)</u></b> for this pneumonia detection model is:
+</p>
+<br />
+  
+  Pneumonia Detection Model |
+  --- |
+  `Precision: 93.4%` |
+  `Recall: 93.4%` |
+  `Average Precision (AP): 96.9%` |
+
 ## How it works
 <p>
   The images are trained using Microsoft Azure Custom Vision, then export the model as TensorFlow
-  and perform all the function in JavaScript.js on Node.js.<br />
-  Since the images are trained using "quick train", the free training service without incurring actual charges, the **__precision, recall and average precision (AP)__**
+  and perform all the function in JavaScript.js on Node.js.<br /><br />
+  Since the images are trained using "quick train", the free training service without incurring actual charges, the <b><u>precision, recall and average precision (AP)</u></b>
   are highly affected, which results in an inaccurate and sometimes wrong predictions of the actual predictions of a user's image.
 </p>
