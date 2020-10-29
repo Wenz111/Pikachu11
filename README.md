@@ -16,6 +16,11 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
   </ol>
 <!-- insert screenshot -->
 
+### Chili Grading Prediction Screenshot - User Input
+<!-- insert screenshot user input -->
+### Chili Grading Prediction Screenshot - Result
+<!-- insert screenshot result -->
+
 <p>
   The <b>precision, recall and average precision (AP)</b> for this chili grading model is:
 </p>
@@ -37,6 +42,11 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
     <li>Pneumonia</li>
 </ol>
 <!-- insert screenshot -->
+
+### Pneumonia Detection Prediction Screenshot - User Input
+<!-- insert screenshot user input -->
+### Pneumonia Detection Prediction Screenshot - Result
+<!-- insert screenshot result -->
 
 <p>
   The <b>precision, recall and average precision (AP)</b> for this pneumonia detection model is:
