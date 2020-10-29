@@ -19,7 +19,6 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
 <p>
   The <b><u>precision, recall and average precision (AP)</u></b> for this chili grading model is:
 </p>
-<br />
   
   Chili Grading Model |
   --- |
@@ -27,7 +26,7 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
   `Recall: 51.2%` |
   `Average Precision (AP): 71.1%` |
 
-<br />
+
 ## AI Project #2 - Pneumonia Detection
 <p>
   Chest X-ray image data set is taken from Kaggle.<br />
@@ -42,7 +41,6 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
 <p>
   The <b><u>precision, recall and average precision (AP)</u></b> for this pneumonia detection model is:
 </p>
-<br />
   
   Pneumonia Detection Model |
   --- |
