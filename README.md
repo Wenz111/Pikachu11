@@ -25,7 +25,7 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
   `Precision: 74.7%` |
   `Recall: 51.2%` |
   `Average Precision (AP): 71.1%` |
-
+<br />
 
 ## AI Project #2 - Pneumonia Detection
 <p>
