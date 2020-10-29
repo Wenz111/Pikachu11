@@ -3,7 +3,7 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
 
 ## AI Project #1 - Chili Grading
   <p>
-    Chili image data set is taken from the AGTECH Hackathon hosted by MDEC.<br />
+    Chili image data set are taken from the AGTECH Hackathon hosted by MDEC.<br />
     The Chili grading category are divided into 6 category, that is:<br />
   </p>
   <ol>
@@ -29,7 +29,7 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
 
 ## AI Project #2 - Pneumonia Detection
 <p>
-  Chest X-ray image data set is taken from Kaggle.<br />
+  Chest X-ray image data set are taken from Kaggle.<br />
   The Pneumonia detection category are divided into 2 category, that is:<br />
 </p>
 <ol>
@@ -47,11 +47,12 @@ Pikachu11 is a Discord Bot which acts as a playground for experimenting with Art
   `Precision: 93.4%` |
   `Recall: 93.4%` |
   `Average Precision (AP): 96.9%` |
+<br />
 
 ## How it works
 <p>
   The images are trained using Microsoft Azure Custom Vision, then export the model as TensorFlow
   and perform all the function in JavaScript.js on Node.js.<br /><br />
-  Since the images are trained using "quick train", the free training service without incurring actual charges, the <b><u>precision, recall and average precision (AP)</u></b>
+  Since the images are trained using "quick train", the free training service without incurring actual charges, the <u>precision, recall and average precision (AP)</u>
   are highly affected, which results in an inaccurate and sometimes wrong predictions of the actual predictions of a user's image.
 </p>
