@@ -72,6 +72,17 @@
 <p>
   The images are trained using Microsoft Azure Custom Vision, then export the model as TensorFlow
   and perform all the function in JavaScript.js on Node.js.<br /><br />
-  Since the images are trained using "quick train", the free training service without incurring actual charges, the <b>precision, recall and average precision (AP)</b>
-  are highly affected, which results in an inaccurate and sometimes wrong predictions of the actual predictions of a user's image.
+  Since the images are trained using "Quick Training", the free training service without incurring actual charges, the <b>precision, recall and   average precision (AP)</b> are highly affected, which results in an inaccurate and sometimes wrong predictions of the actual predictions of a   user's image.
+</p>
+  <br />
+  <p>
+  <h1>Warning - Must Read</h1>
+  </p>
+  <p>
+    <b>Please take these predictions with a grain of salt, you must not use the model above to form and generate opinions.</b>
+    <br />
+    <br />
+  <b>
+    The purpose of this project is to show case the possibility of using Discord to perform image recognition and demonstrate how it can happen.
+  </b>
 </p>
