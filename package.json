@@ -2,25 +2,14 @@
   "name": "Pikachu11",
   "version": "1.0.0",
   "description": "Pikachu11 the Bot",
-  "main": "bot.js",
+  "main": "pikaBot_v2.js",
   "author": "wenz11",
   "dependencies": {
-    "@tensorflow/tfjs-node": "^2.3.0",
-    "bent": "^7.3.10",
-    "canvas": "^2.6.1",
-    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
     "discord.js": "^12.3.1",
-    "download-file": "^0.1.5",
-    "filereader": "^0.10.3",
-    "fs": "0.0.1-security",
-    "http": "0.0.1-security",
-    "https": "^1.0.0",
-    "image-downloader": "^4.0.1",
-    "process-list": "^2.0.0",
-    "ps-list": "^7.2.0",
-    "readimage": "^1.1.1",
-    "requests": "^0.3.0",
-    "winston": "^3.3.3",
-    "xmlhttprequest": "^1.8.0"
+    "winston": "^3.3.3"
+  },
+  "scripts": {
+    "start": "node ./bot/pikaBot_v2.js",
+    "pretty": "prettier --write \"./**/*.{js,ts,jsx,json,css,scss}\""
   }
 }
