@@ -70,11 +70,19 @@ discordBot.on("message", (messages) => {
         break;
 
       case HR.KYMK:
-        send(`${messages.content.replace("_kymk", "").trim()} 今日もかわいい!`);
+        send(
+          `${messages.content
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${HR.KYMK}`, "")
+            .trim()} 今日もかわいい!`
+        );
         break;
 
       case HR.OTSU:
-        send(`おつ${messages.content.replace("_otsu", "").trim()}!`);
+        send(
+          `おつ${messages.content
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${HR.OTSU}`, "")
+            .trim()}!`
+        );
         break;
 
       case HR.HAACHAMA_PANIC_FULL:
