@@ -16,6 +16,7 @@ export const PBC = Object.freeze({
 // Hololive Reference = HR
 export const HR = Object.freeze({
   PAIN_PEKO: "pp",
+  PAIN_PEKO_EMOTE: "ppe",
 
   PAIN_TAKO: "pt",
 
@@ -27,7 +28,10 @@ export const HR = Object.freeze({
 
   OTSU: "otsu",
 
-  PANIC: "panic",
+  HAACHAMA_PANIC_FULL: "hpf",
+  HAACHAMA_PANIC: "hp",
+
+  CAT_CRY_THUMBS_UP: "cctu",
 });
 
 // User Commands = UC

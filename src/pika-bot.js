@@ -25,6 +25,10 @@ discordBot.on("message", (messages) => {
   // Listening to messages that start with underscore `_`
   if (messages.content.substring(0, 1) === MESSAGES_CONTENT_ESCAPE_COMMAND) {
     var messagesContent = messages.content.substring(1).split(" ");
+
+    // Log message content for development
+    // console.log("Message Content:", messagesContent);
+
     var command = messagesContent[0];
 
     switch (command.toLowerCase()) {
@@ -49,6 +53,10 @@ discordBot.on("message", (messages) => {
         send("Pain Peko");
         break;
 
+      case HR.PAIN_PEKO_EMOTE:
+        send("<:pain_peko:832432160811909226>");
+        break;
+
       case HR.PAIN_TAKO:
         send("Pain Tako");
         break;
@@ -69,8 +77,16 @@ discordBot.on("message", (messages) => {
         send(`おつ${messages.content.replace("_otsu", "").trim()}!`);
         break;
 
-      case HR.PANIC:
-        send(":haachama_panic:");
+      case HR.HAACHAMA_PANIC_FULL:
+        send("<:haachama_no:877447905840074762>");
+        break;
+
+      case HR.HAACHAMA_PANIC:
+        send("<:haachama_panic:877450713272303637>");
+        break;
+
+      case HR.CAT_CRY_THUMBS_UP:
+        send("<:catcryingwiththumbsup:795198191200501810>");
         break;
 
       // User Commands
