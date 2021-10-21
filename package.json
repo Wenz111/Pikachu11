@@ -1,15 +1,15 @@
 {
-  "name": "Pikachu11",
+  "name": "pikachu11",
   "version": "1.0.0",
-  "description": "Pikachu11 the Bot",
-  "main": "pikaBot_v2.js",
+  "description": "Pikachu11 Discord Bot",
+  "main": "pika-bot.js",
   "author": "wenz11",
   "dependencies": {
     "discord.js": "^12.3.1",
     "winston": "^3.3.3"
   },
   "scripts": {
-    "start": "node ./bot/pikaBot_v2.js",
+    "start": "node ./src/pika-bot.js",
     "pretty": "prettier --write \"./**/*.{js,ts,jsx,json,css,scss}\""
   }
 }

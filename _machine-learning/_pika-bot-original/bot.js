@@ -1,4 +1,3 @@
-/*
 const Discord = require('discord.js');
 // Require TensorFlow dependency
 const tf = require('@tensorflow/tfjs-node');
@@ -725,4 +724,3 @@ bot.on('message', messages => {
         });
 
         bot.login(token);
- */
