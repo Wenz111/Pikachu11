@@ -72,7 +72,7 @@ discordBot.on("message", (messages) => {
       case HR.KYMK:
         send(
           `${messages.content
-            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${HR.KYMK}`, "")
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${command}`, "")
             .trim()} 今日もかわいい!`
         );
         break;
@@ -80,7 +80,7 @@ discordBot.on("message", (messages) => {
       case HR.OTSU:
         send(
           `おつ${messages.content
-            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${HR.OTSU}`, "")
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${command}`, "")
             .trim()}!`
         );
         break;
@@ -119,7 +119,7 @@ discordBot.on("message", (messages) => {
       case UC.REPEAT:
         send(
           messages.content
-            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${UC.REPEAT}`, "")
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${command}`, "")
             .trim()
         );
         break;
@@ -127,7 +127,7 @@ discordBot.on("message", (messages) => {
       case UC.REPEAT_S1:
         send(
           messages.content
-            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${UC.REPEAT_S1}`, "")
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${command}`, "")
             .trim()
         );
         break;
