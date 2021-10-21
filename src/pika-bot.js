@@ -1,6 +1,5 @@
 import { Client } from "discord.js";
 import { Logger } from "./utils/logger/logger.js";
-import { AUTH_TOKEN } from "./constants/auth-token.js";
 import {
   MESSAGES_CONTENT_ESCAPE_COMMAND,
   PBC,
@@ -8,6 +7,7 @@ import {
   UC,
   CI,
 } from "./constants/constants.js";
+import { AUTH_TOKEN } from "./constants/auth-token.js";
 
 // Initialize Discord Bot Client
 const discordBot = new Client();
