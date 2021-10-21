@@ -1,5 +1,7 @@
+import winston from "winston";
+
 const InitLogger = () => {
-  const logger = require("winston");
+  const logger = winston;
 
   // Configure logger settings
   logger.remove(logger.transports.Console);
@@ -9,11 +11,9 @@ const InitLogger = () => {
   return logger;
 };
 
-module.exports = {
-  Logger: function Logger(event, discordBot) {
-    var logger = InitLogger();
-    logger.info("---Connected---");
-    logger.info(`Discord Bot Username: ${discordBot.user.username}`);
-    logger.info(`Discord Bot Id: ${discordBot.user.id}`);
-  },
+export const Logger = (event, discordBot) => {
+  var logger = InitLogger();
+  logger.info("---Connected---");
+  logger.info(`Discord Bot Username: ${discordBot.user.username}`);
+  logger.info(`Discord Bot Id: ${discordBot.user.id}`);
 };

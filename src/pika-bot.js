@@ -1,9 +1,16 @@
-const Discord = require("discord.js");
-const Logger = require("./utils/logger/logger.js").Logger;
-const authToken = require("./constants/auth.json").token;
+import { Client } from "discord.js";
+import { Logger } from "./utils/logger/logger.js";
+import { AUTH_TOKEN } from "./constants/auth-token.js";
+import {
+  MESSAGES_CONTENT_ESCAPE_COMMAND,
+  PBC,
+  HR,
+  UC,
+  CI,
+} from "./constants/constants.js";
 
 // Initialize Discord Bot Client
-const discordBot = new Discord.Client();
+const discordBot = new Client();
 
 // On Discord Bot Startup/Ready
 discordBot.on("ready", (event) => Logger(event, discordBot));
@@ -16,83 +23,95 @@ discordBot.on("message", (messages) => {
   }
 
   // Listening to messages that start with underscore `_`
-  if (messages.content.substring(0, 1) === "_") {
-    var args = messages.content.substring(1).split(" ");
-    var cmd = args[0];
+  if (messages.content.substring(0, 1) === MESSAGES_CONTENT_ESCAPE_COMMAND) {
+    var messagesContent = messages.content.substring(1).split(" ");
+    var command = messagesContent[0];
 
-    args = args.splice(1);
-    switch (cmd.toLowerCase()) {
+    switch (command.toLowerCase()) {
       // PikaBot Commands
-      case "pikabot":
-      case "pb":
+      case PBC.PIKA_BOT:
+      case PBC.PIKA_BOT_S1:
         send("Hello, World!");
         break;
 
-      case "pikabotstatus":
-      case "pbs":
+      case PBC.PIKA_BOT_STATUS:
+      case PBC.PIKA_BOT_STATUS_S1:
         send("PikaBot status: online!");
         break;
 
-      case "goodbot":
-      case "gb":
+      case PBC.GOOD_BOT:
+      case PBC.GOOD_BOT_S1:
         send("Thanks! Pika Pika!");
         break;
 
       // Hololive Reference
-      case "pp":
+      case HR.PAIN_PEKO:
         send("Pain Peko");
         break;
 
-      case "pd":
+      case HR.PAIN_TAKO:
+        send("Pain Tako");
+        break;
+
+      case HR.PIKACHU_DOKO:
         send("Pikachu どこ?");
         break;
 
-      case "pi":
+      case HR.PIKACHU_INAI:
         send("Pikachu いない?");
         break;
 
-      case "kymk":
+      case HR.KYMK:
         send(`${messages.content.replace("_kymk", "").trim()} 今日もかわいい!`);
         break;
 
-      case "otsu":
+      case HR.OTSU:
         send(`おつ${messages.content.replace("_otsu", "").trim()}!`);
         break;
 
-      case "panic":
+      case HR.PANIC:
         send(":haachama_panic:");
         break;
 
       // User Commands
-      case "showuser":
-      case "suser":
-      case "su":
+      case UC.SHOW_USER:
+      case UC.SHOW_USER_S1:
+      case UC.SHOW_USER_S2:
         send(messages.author.username);
         break;
 
-      case "showuserid":
-      case "showuid":
-      case "suid":
+      case UC.SHOW_USER_ID:
+      case UC.SHOW_USER_ID_S1:
+      case UC.SHOW_USER_ID_S2:
         send(messages.author.id);
         break;
 
-      case "showchannelid":
-      case "showcid":
-      case "scid":
+      case UC.SHOW_CHANNEL_ID:
+      case UC.SHOW_CHANNEL_ID_S1:
+      case UC.SHOW_CHANNEL_ID_S2:
         send(messages.channel.id);
         break;
 
-      case "repeat":
-        send(messages.content.replace("_repeat", "").trim());
+      case UC.REPEAT:
+        send(
+          messages.content
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${UC.REPEAT}`, "")
+            .trim()
+        );
         break;
-      case "r":
-        send(messages.content.replace("_r", "").trim());
+
+      case UC.REPEAT_S1:
+        send(
+          messages.content
+            .replace(`${MESSAGES_CONTENT_ESCAPE_COMMAND}${UC.REPEAT_S1}`, "")
+            .trim()
+        );
         break;
 
       // Creator Info
-      case "showcreator":
-      case "showc":
-      case "sc":
+      case CI.SHOW_CREATOR:
+      case CI.SHOW_CREATOR_S1:
+      case CI.SHOW_CREATOR_S2:
         send(
           "```Pikachu11 is a bot created by Wenz11\n~Still Work In Progress Though...```"
         );
@@ -106,4 +125,4 @@ discordBot.on("message", (messages) => {
   }
 });
 
-discordBot.login(authToken);
+discordBot.login(AUTH_TOKEN);
