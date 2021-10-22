@@ -25,12 +25,12 @@ discordBot.on("messageCreate", (messages) => {
 
   // Listening to messages that start with underscore `_`
   if (messages.content.substring(0, 1) === MESSAGES_CONTENT_ESCAPE_COMMAND) {
-    var messagesContent = messages.content.substring(1).split(" ");
+    const messagesContent = messages.content.substring(1).split(" ");
 
     // Log message content for development
     // console.log("Message Content:", messagesContent);
 
-    var command = messagesContent[0];
+    const command = messagesContent[0];
 
     switch (command.toLowerCase()) {
       // PikaBot Commands

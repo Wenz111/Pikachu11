@@ -12,7 +12,7 @@ const InitLogger = () => {
 };
 
 export const Logger = (event, discordBot) => {
-  var logger = InitLogger();
+  const logger = InitLogger();
   logger.info("---Connected---");
   logger.info(`Discord Bot Username: ${discordBot.user.username}`);
   logger.info(`Discord Bot Id: ${discordBot.user.id}`);
