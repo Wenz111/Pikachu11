@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { Client, Intents } from "discord.js";
 import { Logger } from "./utils/logger/logger.js";
 import {
   MESSAGES_CONTENT_ESCAPE_COMMAND,
@@ -7,16 +7,17 @@ import {
   UC,
   CI,
 } from "./constants/constants.js";
-import { AUTH_TOKEN } from "./constants/auth-token.js";
 
 // Initialize Discord Bot Client
-const discordBot = new Client();
+const discordBot = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+});
 
 // On Discord Bot Startup/Ready
 discordBot.on("ready", (event) => Logger(event, discordBot));
 
 // Read incoming channel messages
-discordBot.on("message", (messages) => {
+discordBot.on("messageCreate", (messages) => {
   // If the author is bot return
   if (messages.author.bot) {
     return;
@@ -149,4 +150,4 @@ discordBot.on("message", (messages) => {
   }
 });
 
-discordBot.login(AUTH_TOKEN);
+discordBot.login(process.env.AUTH_TOKEN);
