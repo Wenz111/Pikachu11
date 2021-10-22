@@ -141,7 +141,7 @@ discordBot.on("messageCreate", (messages) => {
           "```Pikachu11 is a bot created by Wenz11\n~Still Work In Progress Though...```"
         );
         break;
-    } // End of Case Statement
+    } // End of switch case statements
   }
 
   // Send message to Channel
