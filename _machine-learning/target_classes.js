@@ -4,5 +4,5 @@ TARGET_CLASSES = {
   2: "Grade B - Not Ripe",
   3: "Grade B - Ripe",
   4: "Grade C - Not Ripe",
-  5: "Grade C - Ripe"
-}
+  5: "Grade C - Ripe",
+};
