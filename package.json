@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "nodemon --require dotenv/config ./src/pika-bot.js",
+    "deploy": "node --require dotenv/config ./src/pika-bot.js",
     "slash-commands": "node --require dotenv/config ./src/slash-commands.js",
     "prettier": "prettier --write \"./**/*.{js,ts,json}\""
   },
