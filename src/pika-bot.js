@@ -150,4 +150,12 @@ discordBot.on("messageCreate", (messages) => {
   }
 });
 
+discordBot.on("interactionCreate", async (interaction) => {
+  if (!interaction.isCommand()) return;
+
+  if (interaction.commandName === PBC.PIKA_BOT_S1) {
+    await interaction.reply("Hello, World!");
+  }
+});
+
 discordBot.login(process.env.AUTH_TOKEN);
