@@ -7,6 +7,10 @@ import {
   UC,
   CI,
 } from "./constants/constants.js";
+import {
+  GetPikaBotCommandsKeys,
+  GetValueFromKey,
+} from "./database/firebase/pika-bot-commands/pika-bot-commands.js";
 
 // Initialize Discord Bot Client
 const discordBot = new Client({
@@ -153,8 +157,10 @@ discordBot.on("messageCreate", (messages) => {
 discordBot.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) return;
 
-  if (interaction.commandName === PBC.PIKA_BOT_S1) {
-    await interaction.reply("Hello, World!");
+  const interactionCommandName = interaction.commandName;
+
+  if ((await GetPikaBotCommandsKeys()).includes(interactionCommandName)) {
+    await interaction.reply(await GetValueFromKey(interactionCommandName));
   }
 });
 
