@@ -1,13 +1,9 @@
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
-import { PBC } from "./constants/constants.js";
+import { GetPikaBotCommands } from "./database/firebase/pika-bot-commands/pika-bot-commands.js";
 
-const commands = [
-  {
-    name: PBC.PIKA_BOT_S1,
-    description: "Pika Bot is Here!!!",
-  },
-];
+// Get PikaBotCommands from Firebase database
+const commands = await GetPikaBotCommands();
 
 const rest = new REST({ version: "9" }).setToken(process.env.AUTH_TOKEN);
 
