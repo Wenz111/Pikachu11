@@ -1,7 +1,7 @@
 FROM node:17.0.1
 
 # Create app directory
-WORKDIR app
+WORKDIR src
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json and package-lock.json are copied
@@ -17,4 +17,4 @@ RUN npm install -g nodemon
 COPY . .
 
 EXPOSE 8080
-CMD [ "nodemon", "--require", "dotenv/config", "./src/pika-bot.js" ]
+CMD [ "nodemon", "--legacy-watch", "--require", "dotenv/config", "./src/pika-bot.js" ]

@@ -1,11 +1,9 @@
-version: "3.7"
-
 services:
   pika-bot:
     build: .
-    command: nodemon --legacy-watch --require dotenv/config ./src/pika-bot.js
+    command: nodemon --legacy-watch  --require dotenv/config ./src/pika-bot.js
     volumes:
-      - /app
+      - .:/src
     ports:
       - "8080:8080"
     container_name: pika-bot
