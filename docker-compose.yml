@@ -1,7 +1,7 @@
 services:
   pika-bot:
     build: .
-    command: nodemon --legacy-watch  --require dotenv/config ./src/pika-bot.js
+    command: nodemon --legacy-watch --require dotenv/config ./src/pika-bot.js
     volumes:
       - .:/src
     ports:
