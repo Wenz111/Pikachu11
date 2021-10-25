@@ -1,0 +1,39 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pika-bot
+  labels:
+    app: pika-bot
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: LoadBalancer
+  selector:
+    app: pika-bot
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pika-bot
+  labels:
+    app: pika-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pika-bot
+  template:
+    metadata:
+      labels:
+        app: pika-bot
+    spec:
+      containers:
+        - name: pika-bot
+          image: wenz11/pika-bot
+          ports:
+            - containerPort: 8080
+          command: ["node", "--require", "dotenv/config", "./src/pika-bot.js"]
