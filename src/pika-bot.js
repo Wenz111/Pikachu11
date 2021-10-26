@@ -8,8 +8,9 @@ import {
   CI,
 } from "./constants/constants.js";
 import {
-  GetPikaBotCommandsKeys,
-  GetValueFromKey,
+  // GetWhitelistPikaBotCommands,
+  GetAllPikaBotWhitelistSlashCommandsKeys,
+  GetValueFromWhitelistPikaBotSlashCommandsKey,
 } from "./database/firebase/pika-bot-commands/pika-bot-commands.js";
 
 // Initialize Discord Bot Client
@@ -154,13 +155,21 @@ discordBot.on("messageCreate", (messages) => {
   }
 });
 
+// console.log("t:", await GetWhitelistPikaBotCommands());
+
 discordBot.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) return;
 
   const interactionCommandName = interaction.commandName;
 
-  if ((await GetPikaBotCommandsKeys()).includes(interactionCommandName)) {
-    await interaction.reply(await GetValueFromKey(interactionCommandName));
+  if (
+    (await GetAllPikaBotWhitelistSlashCommandsKeys()).includes(
+      interactionCommandName
+    )
+  ) {
+    await interaction.reply(
+      await GetValueFromWhitelistPikaBotSlashCommandsKey(interactionCommandName)
+    );
   }
 });
 
