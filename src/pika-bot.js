@@ -8,7 +8,6 @@ import {
   CI,
 } from "./constants/constants.js";
 import {
-  // GetWhitelistPikaBotCommands,
   GetAllPikaBotWhitelistSlashCommandsKeys,
   GetValueFromWhitelistPikaBotSlashCommandsKey,
 } from "./database/firebase/pika-bot-commands/pika-bot-commands.js";
@@ -154,8 +153,6 @@ discordBot.on("messageCreate", (messages) => {
     messages.channel.send(message);
   }
 });
-
-// console.log("t:", await GetWhitelistPikaBotCommands());
 
 discordBot.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) return;
