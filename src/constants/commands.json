@@ -1,0 +1,120 @@
+{
+  "commands": {
+    "creator-info": [
+      {
+        "description": "Show creator",
+        "key": ["showcreator", "showc", "sc"],
+        "name": "sc",
+        "value": "```Pikachu11 is a bot created by Wenz11\n~Still Work In Progress Though...```"
+      }
+    ],
+    "hololive-reference": [
+      {
+        "description": "Pain Peko",
+        "key": ["pp"],
+        "name": "pp",
+        "value": "Pain Peko"
+      },
+      {
+        "description": "Pain Peko Emote",
+        "key": ["ppe"],
+        "name": "ppe",
+        "value": "<:pain_peko:832432160811909226>"
+      },
+      {
+        "description": "Pain Tako",
+        "key": ["pt"],
+        "name": "pt",
+        "value": "Pain Tako"
+      },
+      {
+        "description": "Where is Pikachu?",
+        "key": ["pd"],
+        "name": "pd",
+        "value": "Pikachu どこ?"
+      },
+      {
+        "description": "Pikachu is not here?",
+        "key": ["pi"],
+        "name": "pi",
+        "value": "Pikachu いない?"
+      },
+      {
+        "description": "You are very cute today!",
+        "key": ["kymk"],
+        "name": "kymk",
+        "value": "$@data.message@$今日もかわいい!"
+      },
+      {
+        "description": "Good work today!",
+        "key": ["otsu"],
+        "name": "otsu",
+        "value": "おつ$@data.message@$!"
+      },
+      {
+        "description": "Haachama panic full emote",
+        "key": ["hpf"],
+        "name": "hpf",
+        "value": "<:haachama_no:877447905840074762>"
+      },
+      {
+        "description": "Haachama panic emote",
+        "key": ["hp"],
+        "name": "hp",
+        "value": "<:haachama_panic:877450713272303637>"
+      },
+      {
+        "description": "Cat crying thumbs up emote",
+        "key": ["cctu"],
+        "name": "cctu",
+        "value": "<:catcryingwiththumbsup:795198191200501810>"
+      }
+    ],
+    "pika-bot": [
+      {
+        "description": "Pika Bot is Here!!!",
+        "key": ["pikabot", "pb"],
+        "name": "pb",
+        "value": "Hello, World!\nHello, World from Firebase database!"
+      },
+      {
+        "description": "Check PikaBot status",
+        "key": ["pikabotstatus", "pbs"],
+        "name": "pbs",
+        "value": "PikaBot status: online!"
+      },
+      {
+        "description": "Show appreciation to PikaBot!",
+        "key": ["goodbot", "gb"],
+        "name": "gb",
+        "value": "Thanks! Pika Pika!"
+      }
+    ],
+    "user-profile": [
+      {
+        "description": "Show username",
+        "key": ["showuser", "suser", "su"],
+        "name": "su",
+        "value": "$@data.username@$"
+      },
+      {
+        "description": "Show user id",
+        "key": ["showuserid", "showuid", "suid"],
+        "name": "suid",
+        "value": "$@data.user.id@$"
+      },
+      {
+        "description": "Show channel id",
+        "key": ["showchannelid", "showcid", "scid"],
+        "name": "scid",
+        "value": "$@data.channel.id@$"
+      },
+      {
+        "description": "Repeat what you type!",
+        "key": ["repeat", "r"],
+        "name": "r",
+        "value": "$@data.message@$"
+      }
+    ]
+  }
+}
