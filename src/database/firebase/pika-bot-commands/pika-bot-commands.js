@@ -33,44 +33,34 @@ export const GetWhitelistPikaBotCommandsKeys = async () => {
   return whitelistPikaBotCommandsKeys;
 };
 
-// // Retrieve a JSON object of all Pika Bot Commands
-// const GetPikaBotCommands = async (whitelistPikaBotCommands) => {
-//   return await get(child(databaseReference, `${whitelistPikaBotCommands}`))
-//     .then((snapshot) => {
-//       if (snapshot.exists()) {
-//         const pikaBotAllCommands = [];
-//         snapshot.forEach((childSnapshot) => {
-//           pikaBotAllCommands.push(childSnapshot.key);
-//         });
-//         return pikaBotAllCommands;
-//       } else {
-//         return "No data available";
-//       }
-//     })
-//     .catch((error) => {
-//       return error;
-//     });
-// };
+// Retrieve a JSON object of all Pika Bot Commands
+const GetPikaBotCommands = async (whitelistPikaBotCommands) => {
+  return await get(child(databaseReference, `${whitelistPikaBotCommands}`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return snapshot.val();
+      } else {
+        return "No data available";
+      }
+    })
+    .catch((error) => {
+      return error;
+    });
+};
 
-// // Retrieve a JSON object of all Whitelist Pika Bot Commands
-// export const GetWhitelistPikaBotCommands = async () => {
-//   let whitelistPikaBotCommandsJson = {};
-//   const whitelistPikaBotCommandsKeys = await GetWhitelistPikaBotCommandsKeys();
+// Retrieve a JSON object of all Whitelist Pika Bot Commands
+export const GetWhitelistPikaBotCommands = async () => {
+  const whitelistPikaBotCommandsJson = [];
+  const whitelistPikaBotCommandsKeys = await GetWhitelistPikaBotCommandsKeys();
 
-//   for (const whitelistPikaBotCommandsKey of whitelistPikaBotCommandsKeys) {
-//     const temporaryWhitelistPikaBotCommands = whitelistPikaBotCommandsJson;
-//     const whitelistPikaBotCommands = await GetPikaBotCommands(
-//       whitelistPikaBotCommandsKey
-//     );
+  for (const whitelistPikaBotCommandsKey of whitelistPikaBotCommandsKeys) {
+    whitelistPikaBotCommandsJson.push(
+      ...(await GetPikaBotCommands(whitelistPikaBotCommandsKey))
+    );
+  }
 
-//     whitelistPikaBotCommandsJson = {
-//       ...temporaryWhitelistPikaBotCommands,
-//       ...whitelistPikaBotCommands,
-//     };
-//   }
-
-//   return whitelistPikaBotCommandsJson;
-// };
+  return whitelistPikaBotCommandsJson;
+};
 
 // Retrieve an array of Pika Bot Slash Commands Keys
 const GetPikaBotSlashCommandsKeys = async (whitelistPikaBotCommands) => {
@@ -131,12 +121,16 @@ const GetValueFromPikaBotSlashCommandsKey = async (
 
 // Retrieve the value based on the Whitelist Pika Bot Commands Key
 export const GetValueFromWhitelistPikaBotSlashCommandsKey = async (key) => {
+  let value = "";
   const whitelistPikaBotCommandsKeys = await GetWhitelistPikaBotCommandsKeys();
 
   for (const whitelistPikaBotCommandsKey of whitelistPikaBotCommandsKeys) {
-    return await GetValueFromPikaBotSlashCommandsKey(
+    value = await GetValueFromPikaBotSlashCommandsKey(
       key,
       whitelistPikaBotCommandsKey
     );
+    if (!(value === "No data available")) break;
   }
+
+  return value;
 };
