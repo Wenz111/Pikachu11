@@ -1,10 +1,11 @@
+import { Commands } from "../../../constants/firebase.js";
 import { RemoveItemFromArray } from "../../../utils/helpers/array-helper.js";
 import { databaseReference } from "../config.js";
 import { child, get } from "firebase/database";
 
 // Retrieve an array of PikaBotCommands
 const GetPikaBotAllCommandsKeys = async () => {
-  return await get(child(databaseReference, `/`))
+  return await get(child(databaseReference, `/${Commands}`))
     .then((snapshot) => {
       if (snapshot.exists()) {
         const pikaBotAllCommands = [];
@@ -35,7 +36,9 @@ export const GetWhitelistPikaBotCommandsKeys = async () => {
 
 // Retrieve a JSON object of all Pika Bot Commands
 const GetPikaBotCommands = async (whitelistPikaBotCommands) => {
-  return await get(child(databaseReference, `${whitelistPikaBotCommands}`))
+  return await get(
+    child(databaseReference, `/${Commands}/${whitelistPikaBotCommands}`)
+  )
     .then((snapshot) => {
       if (snapshot.exists()) {
         return snapshot.val();
@@ -64,7 +67,9 @@ export const GetWhitelistPikaBotCommands = async () => {
 
 // Retrieve an array of Pika Bot Slash Commands Keys
 const GetPikaBotSlashCommandsKeys = async (whitelistPikaBotCommands) => {
-  return await get(child(databaseReference, `${whitelistPikaBotCommands}`))
+  return await get(
+    child(databaseReference, `/${Commands}/${whitelistPikaBotCommands}`)
+  )
     .then((snapshot) => {
       if (snapshot.exists()) {
         const keys = [];
@@ -100,7 +105,9 @@ const GetValueFromPikaBotSlashCommandsKey = async (
   key,
   whitelistPikaBotCommands
 ) => {
-  return await get(child(databaseReference, `${whitelistPikaBotCommands}`))
+  return await get(
+    child(databaseReference, `/${Commands}/${whitelistPikaBotCommands}`)
+  )
     .then((snapshot) => {
       if (snapshot.exists()) {
         let value = "No data available";
